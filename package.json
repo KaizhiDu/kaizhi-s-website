@@ -1,0 +1,29 @@
+{
+  "name": "kaizhidu",
+  "version": "1.0.0",
+  "description": "this is my personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaizhiDu/kaizhi-s-website.git"
+  },
+  "author": "kaizhidu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaizhiDu/kaizhi-s-website/issues"
+  },
+  "homepage": "https://github.com/KaizhiDu/kaizhi-s-website#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.2.4",
+    "express": "^4.17.1",
+    "express-validator": "^6.2.0",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.10",
+    "request": "^2.88.0"
+  }
+}
