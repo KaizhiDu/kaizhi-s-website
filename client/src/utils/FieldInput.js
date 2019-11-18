@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { FormControl } from "react-bootstrap";
 
 const FieldInput = ({ input, type, placeholder, name, meta }) => {
+
     return (
         <Fragment>
             <FormControl

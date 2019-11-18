@@ -6,13 +6,15 @@ import { connect } from "react-redux";
 import { Modal } from "react-bootstrap";
 import Register from "./Register";
 import Login from "./Login";
+import { register } from "../../actions/auth";
 
-const Auth = () => {
+const Auth = ({ register }) => {
 
-    const [ register, setRegister ] = useState(false);
+    const [ isRegister, setRegister ] = useState(false);
 
     const registerSubmit = (values) => {
-        console.log(values);
+        const { name, email, password } = values;
+        register({ name, email, password });
     };
 
     const loginSubmit = (values) => {
@@ -22,22 +24,22 @@ const Auth = () => {
     return (
         <Fragment>
             <Modal.Header closeButton>
-                <Modal.Title>{register ? 'Register' : 'Login'}</Modal.Title>
+                <Modal.Title>{isRegister ? 'Register' : 'Login'}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                {register ?
+                {isRegister ?
                     (
                         <Register onSubmit={registerSubmit}/>
                     )
                     :
                     (
                         <Login onSubmit={loginSubmit}
-                            onRegisterClick={() => setRegister(true)}/>
+                               onRegisterClick={() => setRegister(true)}/>
                     )
                 }
             </Modal.Body>
         </Fragment>
     )
-}
+};
 
-export default connect(null, {})(Auth);
+export default connect(null, { register })(Auth);

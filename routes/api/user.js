@@ -8,12 +8,27 @@ const config = require('../../config/default');
 
 const User = require('../../models/User');
 
+// router GET api/user/checkUserExist
+// check user exist
+router.get('/checkUserExist/:email', async (req, res) => {
+    const user = await User.findOne({ email: req.params.email })
+    if (user) await res.send(true);
+    return await res.send(false);
+});
+
+// router GET api/user/all
+// get all the users
+router.get('/all', async (req, res) => {
+    const users = await User.find();
+    if (users) await res.json(users);
+    return await res.send(null);
+});
+
 // router POST api/user
 // Register user
 router.post('/', [
     check('name', 'Name is required').not().isEmpty(),
-    check('email', 'Please include a valid email').isEmail(),
-    check('password', 'Please enter a password with 6 or more characters').isLength({ min: 6 })
+    check('email', 'Please include a valid email').isEmail()
 ], async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -23,7 +38,7 @@ router.post('/', [
     try {
         let user = await User.findOne({ email });
         if (user) {
-            return res.status(500).json({ error: [ { msg: 'User already exists!' } ] });
+            return res.status(500).json({ errors: [ { msg: 'User already exists!' } ] });
         }
         // Get user gravatar
         const avatar = gravatar.url(email, {
@@ -60,7 +75,7 @@ router.post('/', [
         )
     } catch (err) {
         console.error(err.message);
-        res.status(500).send('Server Errors');
+        res.status(500).json({ errors: [ { msg: 'Server Error!' } ] });
     }
 });
 

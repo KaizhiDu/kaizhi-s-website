@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { REGISTER_SUCCESS } from './type';
+import { REGISTER_SUCCESS, CHECK_USER_EXIST, GET_USERS } from './type';
 
 export const register = ({ name, email, password }) => async dispatch => {
     const config = {
@@ -11,10 +11,26 @@ export const register = ({ name, email, password }) => async dispatch => {
     try {
         const res = await axios.post('/api/user', body, config);
         dispatch({
-           type: REGISTER_SUCCESS,
-           payload: res.data
+            type: REGISTER_SUCCESS,
+            payload: res.data
         });
     } catch (err) {
         console.log(err.message);
     }
+};
+
+export const checkUserExist = (email) => async dispatch => {
+    const res = await axios.get(`/api/user/checkUserExist/${email}`);
+    dispatch({
+        type: CHECK_USER_EXIST,
+        payload: res.data
+    });
+};
+
+export const getAllUser = () => async dispatch => {
+    const res = await axios.get('/api/user/all');
+    dispatch({
+        type: GET_USERS,
+        payload: res.data
+    })
 };

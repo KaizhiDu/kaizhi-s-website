@@ -1,13 +1,28 @@
 /**
  * Created by Kaizhi Du on 2019/11/13.
  */
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Button, Col, Form } from "react-bootstrap";
 import { reduxForm, Field } from "redux-form";
 import FieldInput from "../../utils/FieldInput";
-const emailRg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+import { getAllUser } from '../../actions/auth';
+import { connect } from 'react-redux';
+import store from '../../store';
 
-const Register = ({ handleSubmit }) => {
+const emailRg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+let allUsers = [];
+
+const Register = ({ handleSubmit, users }) => {
+    if (users) {
+        users.map(user => {
+            allUsers.push(user.email);
+        });
+    }
+
+    useEffect(() => {
+        store.dispatch(getAllUser());
+    }, []);
+
     return (
         <Fragment>
             <Form onSubmit={handleSubmit}>
@@ -17,11 +32,13 @@ const Register = ({ handleSubmit }) => {
                 </Form.Group>
                 <Form.Group controlId="email">
                     <Form.Label>Email address</Form.Label>
-                    <Field type="email" name="email" placeholder="Enter email" component={FieldInput} autocomplete="off"/>
+                    <Field type="email" name="email" placeholder="Enter email" component={FieldInput}
+                           autocomplete="off"/>
                 </Form.Group>
                 <Form.Group controlId="password">
                     <Form.Label>Password</Form.Label>
-                    <Field type="password" name="password" placeholder="Password" component={FieldInput} autocomplete="off"/>
+                    <Field type="password" name="password" placeholder="Password" component={FieldInput}
+                           autocomplete="off"/>
                 </Form.Group>
                 <Form.Group controlId="password2">
                     <Form.Label>Re-enter Password</Form.Label>
@@ -38,6 +55,16 @@ const Register = ({ handleSubmit }) => {
     );
 };
 
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+const asyncValidate = (values) => {
+    return sleep(1000).then(() => {
+        if (allUsers.includes(values.email)) {
+            throw { email: 'That email is taken' }
+        }
+    });
+};
+
 const validate = (values) => {
     const errors = {};
     if (!values.name) errors.name = 'User\'s name is required';
@@ -49,8 +76,14 @@ const validate = (values) => {
     return errors;
 };
 
-export default reduxForm({
+const mapStateToProps = (state) => ({
+    users: state.auth.users
+});
+
+export default connect(mapStateToProps, { getAllUser })(reduxForm({
     validate,
+    asyncValidate,
     touchOnChange: true,
+    asyncChangeFields: [ 'email' ],
     form: 'RegisterForm'
-})(Register);
+})(Register))
