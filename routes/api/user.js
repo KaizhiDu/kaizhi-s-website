@@ -11,7 +11,7 @@ const User = require('../../models/User');
 // router GET api/user/checkUserExist
 // check user exist
 router.get('/checkUserExist/:email', async (req, res) => {
-    const user = await User.findOne({ email: req.params.email })
+    const user = await User.findOne({ email: req.params.email });
     if (user) await res.send(true);
     return await res.send(false);
 });

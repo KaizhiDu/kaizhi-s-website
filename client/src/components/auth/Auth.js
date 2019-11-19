@@ -8,11 +8,12 @@ import Register from "./Register";
 import Login from "./Login";
 import { register } from "../../actions/auth";
 
-const Auth = ({ register }) => {
+const Auth = ({ register, isAuthenticated, onClose }) => {
 
     const [ isRegister, setRegister ] = useState(false);
 
     const registerSubmit = (values) => {
+
         const { name, email, password } = values;
         register({ name, email, password });
     };
@@ -20,6 +21,10 @@ const Auth = ({ register }) => {
     const loginSubmit = (values) => {
         console.log(values);
     };
+
+    if (isAuthenticated) {
+        onClose();
+    }
 
     return (
         <Fragment>
@@ -42,4 +47,8 @@ const Auth = ({ register }) => {
     )
 };
 
-export default connect(null, { register })(Auth);
+const mapStateToProps = (state) => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { register })(Auth);

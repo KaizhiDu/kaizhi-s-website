@@ -1,12 +1,15 @@
 import React, { Fragment, useState } from "react";
 import { Navbar, Nav, Modal } from "react-bootstrap";
+import { connect } from "react-redux";
 // inside imports
 import Auth from "../auth/Auth";
 
 
-const Topbar = () => {
+const Topbar = ({ isAuthenticated }) => {
 
     const [ show, setShow ] = useState(false);
+
+    const handleClose = () => setShow(false);
 
     return (
         <Fragment>
@@ -28,11 +31,14 @@ const Topbar = () => {
             </Navbar>
             {/*Pop up*/}
             <Modal show={show} onHide={() => setShow(false)}>
-                <Auth/>
+                <Auth onClose={handleClose}/>
             </Modal>
         </Fragment>
     )
 };
 
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
 
-export default Topbar;
+export default connect(mapStateToProps, {})(Topbar);
