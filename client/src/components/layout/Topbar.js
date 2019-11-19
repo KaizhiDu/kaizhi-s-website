@@ -1,15 +1,21 @@
 import React, { Fragment, useState } from "react";
 import { Navbar, Nav, Modal } from "react-bootstrap";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 // inside imports
 import Auth from "../auth/Auth";
+import store from "../../store";
+import { loadUser } from "../../actions/auth";
 
 
 const Topbar = ({ isAuthenticated }) => {
 
     const [ show, setShow ] = useState(false);
 
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+        store.dispatch(loadUser());
+    };
 
     return (
         <Fragment>
@@ -24,8 +30,12 @@ const Topbar = ({ isAuthenticated }) => {
                         <Nav.Link href="#photo">Photo</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#login" onClick={() => setShow(true)}>LogIn</Nav.Link>
-                        <Nav.Link href="#logout">LogOut</Nav.Link>
+                        {
+                            isAuthenticated ?
+                                (<Nav.Link href="#logout">LogOut</Nav.Link>)
+                                :
+                                (<Nav.Link href="#login" onClick={() => setShow(true)}>LogIn</Nav.Link>)
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

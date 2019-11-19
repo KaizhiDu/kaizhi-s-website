@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { REGISTER_SUCCESS, CHECK_USER_EXIST, GET_USERS } from './type';
+import { REGISTER_SUCCESS, CHECK_USER_EXIST, GET_USERS, LOAD_USER } from './type';
+import setAuthToken from "../utils/setAuthToken";
 
 export const register = ({ name, email, password }) => async dispatch => {
     const config = {
@@ -33,4 +34,19 @@ export const getAllUser = () => async dispatch => {
         type: GET_USERS,
         payload: res.data
     })
+};
+
+export const loadUser = () => async dispatch => {
+    if (localStorage.token) {
+        setAuthToken(localStorage.token);
+        try {
+            const res = await axios.get('/api/auth');
+            dispatch({
+                type: LOAD_USER,
+                payload: res.data
+            });
+        } catch (err) {
+            console.error(err.message);
+        }
+    }
 };

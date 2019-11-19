@@ -4,9 +4,12 @@
 import React, { Fragment, useState } from 'react';
 import { connect } from "react-redux";
 import { Modal } from "react-bootstrap";
+import {Redirect} from "react-router-dom";
+// inside import
 import Register from "./Register";
 import Login from "./Login";
 import { register } from "../../actions/auth";
+
 
 const Auth = ({ register, isAuthenticated, onClose }) => {
 

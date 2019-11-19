@@ -5,3 +5,4 @@ export const REMOVE_ALERT = "remove_alert";
 export const REGISTER_SUCCESS = "register_success";
 export const CHECK_USER_EXIST = "check_user_exist";
 export const GET_USERS = "get_users";
+export const LOAD_USER = "load_user";
