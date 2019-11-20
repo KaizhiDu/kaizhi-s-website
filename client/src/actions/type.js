@@ -6,3 +6,4 @@ export const REGISTER_SUCCESS = "register_success";
 export const CHECK_USER_EXIST = "check_user_exist";
 export const GET_USERS = "get_users";
 export const LOAD_USER = "load_user";
+export const LOGIN_SUCCESS = "login_success";

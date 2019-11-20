@@ -48,6 +48,9 @@ const validate = (values) => {
     if (emailRg.test(values.email) === false) {
         errors.email = 'This Email is invalid';
     }
+    if (!values.password) {
+        errors.password = "password can not be empty";
+    }
     return errors;
 };
 

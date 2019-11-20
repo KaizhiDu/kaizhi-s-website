@@ -4,14 +4,13 @@
 import React, { Fragment, useState } from 'react';
 import { connect } from "react-redux";
 import { Modal } from "react-bootstrap";
-import {Redirect} from "react-router-dom";
 // inside import
 import Register from "./Register";
 import Login from "./Login";
-import { register } from "../../actions/auth";
+import { register, login } from "../../actions/auth";
 
 
-const Auth = ({ register, isAuthenticated, onClose }) => {
+const Auth = ({ register, login, isAuthenticated, onClose }) => {
 
     const [ isRegister, setRegister ] = useState(false);
 
@@ -22,7 +21,8 @@ const Auth = ({ register, isAuthenticated, onClose }) => {
     };
 
     const loginSubmit = (values) => {
-        console.log(values);
+        const { email, password } = values;
+        login({ email, password });
     };
 
     if (isAuthenticated) {
@@ -54,4 +54,4 @@ const mapStateToProps = (state) => ({
     isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(mapStateToProps, { register })(Auth);
+export default connect(mapStateToProps, { register, login })(Auth);
