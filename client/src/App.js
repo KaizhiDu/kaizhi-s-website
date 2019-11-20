@@ -9,9 +9,12 @@ import store from "./store";
 // import inside
 import Navbar from "./components/layout/Topbar";
 import Dashboard from "./components/dashboard/Dashboard";
+import Note from "./components/note/Note";
+import Profile from "./components/profile/Profile";
+import Project from "./components/project/Project";
+import Photo from "./components/photo/Photo";
 import setAuthToken from "./utils/setAuthToken";
 import { loadUser } from "./actions/auth";
-
 
 if (localStorage.token) {
     setAuthToken(localStorage.token)
@@ -31,6 +34,10 @@ function App() {
                     <Container>
                         <Switch>
                             <Route exact path='/' component={Dashboard}/>
+                            <Route exact path='/profile' component={Profile}/>
+                            <Route exact path='/note' component={Note}/>
+                            <Route exact path='/project' component={Project}/>
+                            <Route exact path='/photo' component={Photo}/>
                         </Switch>
                     </Container>
                 </Fragment>
