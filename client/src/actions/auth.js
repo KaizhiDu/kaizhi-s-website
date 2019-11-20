@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { REGISTER_SUCCESS, CHECK_USER_EXIST, GET_USERS, LOAD_USER, LOGIN_SUCCESS } from './type';
+import { REGISTER_SUCCESS, CHECK_USER_EXIST, GET_USERS, LOAD_USER, LOGIN_SUCCESS, LOG_OUT } from './type';
 import setAuthToken from "../utils/setAuthToken";
 
 export const register = ({ name, email, password }) => async dispatch => {
@@ -71,4 +71,10 @@ export const login = ({ email, password }) => async dispatch => {
         console.log(errors[0].msg);
         alert(errors[0].msg);
     }
+};
+
+export const logout = () => dispatch => {
+    dispatch({
+        type: LOG_OUT
+    });
 };

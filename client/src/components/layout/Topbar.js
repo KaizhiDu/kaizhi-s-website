@@ -6,9 +6,9 @@ import { Redirect } from "react-router-dom";
 import Auth from "../auth/Auth";
 import store from "../../store";
 import { loadUser } from "../../actions/auth";
+import { logout } from "../../actions/auth";
 
-
-const Topbar = ({ isAuthenticated }) => {
+const Topbar = ({ isAuthenticated, logout }) => {
 
     const [ show, setShow ] = useState(false);
 
@@ -32,7 +32,7 @@ const Topbar = ({ isAuthenticated }) => {
                     <Nav>
                         {
                             isAuthenticated ?
-                                (<Nav.Link href="#logout">LogOut</Nav.Link>)
+                                (<Nav.Link href="#logout" onClick={logout}>LogOut</Nav.Link>)
                                 :
                                 (<Nav.Link href="#login" onClick={() => setShow(true)}>LogIn</Nav.Link>)
                         }
@@ -51,4 +51,4 @@ const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(mapStateToProps, {})(Topbar);
+export default connect(mapStateToProps, { logout })(Topbar);
