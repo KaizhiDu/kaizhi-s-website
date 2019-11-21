@@ -6,10 +6,11 @@ import { Badge, Col, Row } from "react-bootstrap";
 
 const ProfileSkillSet = () => {
     return (
-        <div className="profile bg-secondary p-3">
+        <div className="profile bg-light p-3">
             <div className='bg-light'>
                 <div className='textSpace'>
                     <h2 className='text-secondary'>Skill Set</h2>
+                    <br/>
                     <Row>
                         <Col md={3}>
                             <b className='text-info'>Language</b>

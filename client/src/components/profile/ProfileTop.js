@@ -7,12 +7,12 @@ import profileMe from "../../img/profile_me.jpg";
 
 const ProfileTop = () => {
     return (
-        <div className="profile bg-secondary p-3">
+        <div className="profile bg-light p-3">
             <div className='bg-light'>
                 <Media>
                     <img
                         thumbnail
-                        width={128}
+                        width={250}
                         height={200}
                         className="mr-4"
                         src={profileMe}

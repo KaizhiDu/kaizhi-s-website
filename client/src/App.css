@@ -13,12 +13,22 @@
     color: #808080;
 }
 
-.profile img {
-    width: 250px;
+.profileEducationDetail {
+    color: #808080;
+    margin-top: -12px;
+}
+
+.profile {
+    position:relative;
+    display: inline-block;
+    background: -webkit-gradient(linear, 0% 20%, 0% 1000%, from(#fff), to(#fff), color-stop(.1,#f3f3f3));
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.1) inset;
+    -webkit-border-bottom-right-radius: 6px 50px;
 }
 
 .profile .icons a {
-    color: #fff;
+    color: #808080;
     margin: 0 0.4rem;
 }
 
