@@ -23,7 +23,7 @@ const dashboard = () => {
 
             <Row>
                 <h2>My Project</h2>
-                <small className='smallText'>
+                <small className='ProjectClick'>
                     <Link to='/project' className='text-muted' style={{ textDecoration: 'none' }}>
                         click here
                     </Link>

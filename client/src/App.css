@@ -3,7 +3,52 @@
     margin-top: 4px;
 }
 
-.smallText {
-    margin-top: 15px;
-    margin-left: 13px;
+.ProjectClick {
+    margin-top: 17px;
+    margin-left: 10px;
 }
+
+/* Profiles Page */
+.profileText {
+    color: #808080;
+}
+
+.profile img {
+    width: 250px;
+}
+
+.profile .icons a {
+    color: #fff;
+    margin: 0 0.4rem;
+}
+
+.textSpace {
+    margin-left: 10px;
+}
+
+.skillSpace {
+    margin-left: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

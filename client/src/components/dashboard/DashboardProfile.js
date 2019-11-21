@@ -13,7 +13,7 @@ const DashboardProfile = () => {
             <Card.Body>
                 <Card.Title>KAIZHI DU</Card.Title>
                 <Card.Text>
-                    I am a programmer. I have nothing but integrity and diligent.
+                    I am a programmer. I have nothing but integrity and diligence.
                 </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
