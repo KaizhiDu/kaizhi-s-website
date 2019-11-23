@@ -1,14 +1,12 @@
 /**
- * Created by Kaizhi Du on 2019/11/20.
+ * Created by Kaizhi Du on 2019/11/21.
  */
 import React from 'react';
 
 const Note = () => {
     return (
-        <div>
-            This is note
-        </div>
+        <div>this is note</div>
     )
-}
+};
 
-export default Note
+export default Note;
