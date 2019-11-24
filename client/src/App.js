@@ -9,10 +9,11 @@ import store from "./store";
 // import inside
 import Navbar from "./components/layout/Topbar";
 import Dashboard from "./components/dashboard/Dashboard";
-import Note from "./components/note/Note";
+import Notes from "./components/note/Notes";
 import Profile from "./components/profile/Profile";
 import Project from "./components/project/Project";
 import Photo from "./components/photo/Photo";
+import NoteById from "./components/note/Note";
 import setAuthToken from "./utils/setAuthToken";
 import { loadUser } from "./actions/auth";
 
@@ -35,7 +36,8 @@ function App() {
                         <Switch>
                             <Route exact path='/' component={Dashboard}/>
                             <Route exact path='/profile' component={Profile}/>
-                            <Route exact path='/note' component={Note}/>
+                            <Route exact path='/note' component={Notes}/>
+                            <Route exact path='/note/:id' component={NoteById}/>
                             <Route exact path='/project' component={Project}/>
                             <Route exact path='/photo' component={Photo}/>
                         </Switch>

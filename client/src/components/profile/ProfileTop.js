@@ -11,7 +11,6 @@ const ProfileTop = () => {
             <div className='bg-light'>
                 <Media>
                     <img
-                        thumbnail
                         width={250}
                         height={200}
                         className="mr-4"

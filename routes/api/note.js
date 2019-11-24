@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require("express-validator/check");
 
-// Note Schema
+// Notes Schema
 const Note = require('../../models/Note');
 
 // router POST api/note
@@ -10,7 +10,7 @@ const Note = require('../../models/Note');
 router.post('/', [
         check('title', 'title is required').not().isEmpty(),
         check('content', 'content is required').not().isEmpty(),
-        check('type', 'type is required').not().isEmpty()
+        check('types', 'type is required').not().isEmpty()
     ],
     async (req, res) => {
         const errors = validationResult(req);
@@ -18,8 +18,12 @@ router.post('/', [
             return res.status(400).json({ errors: errors.array() });
         }
         try {
-            const { title, content, type, publishDate } = req.body;
-            const newNote = new Note({ title, content, type, publishDate });
+            const { title, content, types, publishDate, description } = req.body;
+            let saveType = [];
+            types.split(',').map(type => {
+                saveType.push(type.trim());
+            });
+            const newNote = new Note({ title, content, types: saveType, publishDate, description });
             const note = await newNote.save();
             await res.json(note);
         } catch (err) {

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const NoteSchema = new mongoose.Schema({
     title: { type: String, required: true },
     content: { type: String, required: true },
-    type: { type: String, required: true },
+    types: [],
     description: { type: String, default: "As the title show" },
     publishDate: { type: Date, default: Date.now },
     likes: [
@@ -36,4 +36,4 @@ const NoteSchema = new mongoose.Schema({
     ]
 });
 
-module.exports = Note = mongoose.model('note', NoteSchema);
+module.exports = Notes = mongoose.model('note', NoteSchema);
