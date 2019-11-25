@@ -2,7 +2,7 @@
  * Created by Kaizhi Du on 2019/11/20.
  */
 import React from 'react';
-import { Card, Col, ListGroup, ListGroupItem, Row } from "react-bootstrap";
+import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import js from "../../img/javascript.jpg";
 import { Link } from "react-router-dom";
 

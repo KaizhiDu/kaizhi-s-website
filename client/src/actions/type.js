@@ -11,3 +11,4 @@ export const LOG_OUT = "log_out";
 // note
 export const GET_NOTES = "get_notes";
 export const GET_NOTE = "get_note";
+export const UPDATE_COMMENT = "update_comment";

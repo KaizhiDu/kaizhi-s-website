@@ -1,4 +1,4 @@
-import { GET_NOTE, GET_NOTES } from "../actions/type";
+import { GET_NOTE, GET_NOTES, UPDATE_COMMENT } from "../actions/type";
 
 const initialState = {
     notes: [],
@@ -18,6 +18,7 @@ export default function(state = initialState, action) {
                 loading: false,
                 noteLoading: true
             };
+        case UPDATE_COMMENT:
         case GET_NOTE:
             return {
                 ...state,

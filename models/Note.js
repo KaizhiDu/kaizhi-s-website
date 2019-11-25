@@ -16,18 +16,14 @@ const NoteSchema = new mongoose.Schema({
     ],
     comments: [
         {
-            user: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'users'
-            },
+            avatar: { type: String, required: true },
+            name: { type: String, required: true },
             text: { type: String, required: true },
             date: { type: Date, default: Date.now },
-            secondComment: [
+            secondComments: [
                 {
-                    user: {
-                        type: mongoose.Schema.Types.ObjectId,
-                        ref: 'users'
-                    },
+                    avatar: { type: String, required: true },
+                    name: { type: String, required: true },
                     text: { type: String, required: true },
                     date: { type: Date, default: Date.now }
                 }

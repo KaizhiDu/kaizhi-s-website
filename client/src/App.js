@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Container } from "react-bootstrap";
 // Redux
 // Redux and react is separate, we use react-redux combine together
-import { connect, Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import store from "./store";
 // import inside
 import Navbar from "./components/layout/Topbar";

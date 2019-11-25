@@ -2,7 +2,6 @@ import React, { Fragment, useState } from "react";
 import { Navbar, Nav, Modal } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { NavLink } from 'react-router-dom'
 // inside imports
 import Auth from "../auth/Auth";
 import store from "../../store";

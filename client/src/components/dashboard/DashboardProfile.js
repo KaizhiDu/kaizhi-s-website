@@ -1,7 +1,7 @@
 /**
  * Created by Kaizhi Du on 2019/11/20.
  */
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Card, Col, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 import me from "../../img/me.jpg";
 import { Link } from "react-router-dom";

@@ -4,6 +4,7 @@ const { check, validationResult } = require("express-validator/check");
 
 // Notes Schema
 const Note = require('../../models/Note');
+const User = require('../../models/User');
 
 // router POST api/note
 // create a note
@@ -38,7 +39,7 @@ router.post('/', [
 // get all the notes
 router.get('/all', async (req, res) => {
     try {
-        const notes = await Note.find();
+        const notes = await Note.find().sort({ publishDate: -1 });
         await res.json(notes);
     } catch (err) {
         console.error(err.message);
@@ -55,6 +56,28 @@ router.get('/:id', async (req, res) => {
             return res.status(500).send("No note found");
         }
         await res.json(note);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server Error");
+    }
+});
+
+// router GET api/note/comment/:id/:userId
+// update the comment of note
+router.put('/comment/:id/:userId', async (req, res) => {
+    try {
+        const text = req.body.content;
+        const user = await User.findById(req.params.userId);
+        let note = await Note.findById(req.params.id);
+        const comment = {
+            avatar: user.avatar,
+            name: user.name,
+            text,
+            secondComments: []
+        };
+        note.comments.push(comment);
+        note = await note.save();
+        res.send(note);
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server Error");

@@ -2,7 +2,7 @@
  * Created by Kaizhi Du on 2019/11/21.
  */
 import React from 'react';
-import { Col, Media, Row } from "react-bootstrap";
+import { Media } from "react-bootstrap";
 import clu from '../../img/clu.jpg';
 import cut from '../../img/cut.png';
 import zqsz from '../../img/zqsz.jpg';
