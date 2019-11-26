@@ -38,7 +38,7 @@ const Comments = ({ updateComment, auth: { isAuthenticated, user }, note: { note
                         </Row>
                     ) :
                     (
-                        <Row><Alert variant="warning">You must log in before you comment</Alert></Row>
+                        <Row><Alert variant="warning">Login before giving a comment</Alert></Row>
                     )
             }
             <hr/>
@@ -50,12 +50,11 @@ const Comments = ({ updateComment, auth: { isAuthenticated, user }, note: { note
                         )
                         :
                         (
-                            <ul className="list-unstyled">
+                            <ul className="list-unstyled commentListWidth">
                                 <CommentsList comments={note.comments}/>
                             </ul>
                         )
                 }
-
             </Row>
         </Fragment>
     )

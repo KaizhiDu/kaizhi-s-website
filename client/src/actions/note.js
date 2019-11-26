@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_NOTE, GET_NOTES, UPDATE_COMMENT } from "./type";
+import { GET_NOTE, GET_NOTES, LIKE_COMMENT, UPDATE_COMMENT } from "./type";
 import React from "react";
 
 export const getNotes = () => async dispatch => {
@@ -41,5 +41,41 @@ export const updateComment = ({ id, userId, content }) => async dispatch => {
         });
     } catch (err) {
         console.log(err.message);
+    }
+};
+
+export const likeComment = ({ noteId, commentId, userId }) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+    try {
+        const res = await axios.put(`/api/note/comment/like/${noteId}/${commentId}/${userId}`, config);
+        console.log(res.data);
+        dispatch({
+            type: LIKE_COMMENT,
+            payload: res.data
+        });
+    } catch (err) {
+        console.error(err.message);
+    }
+};
+
+export const unlikeComment = ({ noteId, commentId, userId }) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+    try {
+        const res = await axios.put(`/api/note/comment/unlike/${noteId}/${commentId}/${userId}`, config);
+        console.log(res.data);
+        dispatch({
+            type: LIKE_COMMENT,
+            payload: res.data
+        });
+    } catch (err) {
+        console.error(err.message);
     }
 };

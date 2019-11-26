@@ -62,20 +62,60 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// router GET api/note/comment/:id/:userId
+// router PUT api/note/comment/:id/:userId
 // update the comment of note
 router.put('/comment/:id/:userId', async (req, res) => {
     try {
         const text = req.body.content;
         const user = await User.findById(req.params.userId);
         let note = await Note.findById(req.params.id);
-        const comment = {
+        const comments = {
             avatar: user.avatar,
             name: user.name,
             text,
-            secondComments: []
+            secondComments: [],
+            likes: []
         };
-        note.comments.push(comment);
+        note.comments.push(comments);
+        note = await note.save();
+        res.send(note);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server Error");
+    }
+});
+
+// router PUT api/note/comment/like/:noteId/:commentId/:userId
+// like a comment
+router.put('/comment/like/:noteId/:commentId/:userId', async (req, res) => {
+    try {
+        let note = await Note.findById(req.params.noteId);
+        const comments = note.comments;
+        comments.map(comment => {
+            if (comment._id == req.params.commentId) {
+                comment.likes.push(req.params.userId);
+            }
+        });
+        note = await note.save();
+        res.send(note);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server Error");
+    }
+});
+
+// router PUT api/note/comment/like/:noteId/:commentId/:userId
+// cancel like a comment
+router.put('/comment/unlike/:noteId/:commentId/:userId', async (req, res) => {
+    try {
+        let note = await Note.findById(req.params.noteId);
+        const comments = note.comments;
+        comments.map(comment => {
+            if (comment._id == req.params.commentId) {
+                comment.likes.remove(req.params.userId);
+            }
+        });
+        console.log(note);
         note = await note.save();
         res.send(note);
     } catch (err) {

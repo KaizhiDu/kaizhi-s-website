@@ -6,20 +6,14 @@ const NoteSchema = new mongoose.Schema({
     types: [],
     description: { type: String, default: "As the title show" },
     publishDate: { type: Date, default: Date.now },
-    likes: [
-        {
-            user: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'users'
-            }
-        }
-    ],
+    likes: [],
     comments: [
         {
             avatar: { type: String, required: true },
             name: { type: String, required: true },
             text: { type: String, required: true },
             date: { type: Date, default: Date.now },
+            likes: [],
             secondComments: [
                 {
                     avatar: { type: String, required: true },
