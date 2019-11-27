@@ -1,15 +1,36 @@
-import { GET_NOTE, GET_NOTES, LIKE_COMMENT, LOAD_NOTES, UNLIKE_COMMENT, UPDATE_COMMENT } from "../actions/type";
+import {
+    GET_NOTE,
+    GET_NOTES,
+    GET_NOTES_WITH_PAGE,
+    LIKE_COMMENT,
+    LOAD_NOTES,
+    UNLIKE_COMMENT,
+    UPDATE_COMMENT
+} from "../actions/type";
 
 const initialState = {
     notes: [],
     note: null,
+    notesWithPage: [],
     loading: true,
-    noteLoading: true
+    noteLoading: true,
+    notesWithPageLoading: true,
+    skip: 0,
+    limit: 5,
+    active: 1
 };
 
 export default function(state = initialState, action) {
     const { type, payload } = action;
     switch (type) {
+        case GET_NOTES_WITH_PAGE:
+            return {
+                ...state,
+                notesWithPage: payload.data,
+                skip: payload.skip,
+                active: payload.active,
+                notesWithPageLoading: false
+            };
         case GET_NOTES:
             return {
                 ...state,

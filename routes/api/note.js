@@ -47,6 +47,18 @@ router.get('/all', async (req, res) => {
     }
 });
 
+// router POST api/note/all/page
+// get all the notes with Pagination
+router.post('/all/page', async (req, res) => {
+    try {
+        const notes = await Note.find().sort({ publishDate: -1 }).skip(req.body.skip).limit(req.body.limit);
+        await res.json(notes);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
 // router GET api/note/:id
 // get note by note id
 router.get('/:id', async (req, res) => {

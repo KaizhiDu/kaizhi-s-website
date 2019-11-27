@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_NOTE, GET_NOTES, LIKE_COMMENT, LOAD_NOTES, UPDATE_COMMENT } from "./type";
+import { GET_NOTE, GET_NOTES, GET_NOTES_WITH_PAGE, LIKE_COMMENT, LOAD_NOTES, UPDATE_COMMENT } from "./type";
 import React from "react";
 
 export const loadNotes = () => async dispatch => {
@@ -20,6 +20,25 @@ export const getNotes = () => async dispatch => {
         dispatch({
             type: GET_NOTES,
             payload: res.data
+        });
+    } catch (err) {
+        console.log(err.message);
+    }
+};
+
+export const getNotesWithPage = ({ skip, limit, active }) => async dispatch => {
+    console.log({ skip, limit, active });
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+    const body = JSON.stringify({ skip, limit });
+    try {
+        const res = await axios.post('/api/note/all/page', body, config);
+        dispatch({
+            type: GET_NOTES_WITH_PAGE,
+            payload: { data: res.data, skip, active }
         });
     } catch (err) {
         console.log(err.message);

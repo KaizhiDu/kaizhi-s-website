@@ -2,7 +2,7 @@
  * Created by Kaizhi Du on 2019/11/21.
  */
 import React, { Fragment, useEffect } from 'react';
-import { Col, Row, OverlayTrigger, Popover, Badge } from "react-bootstrap";
+import { Col, Row, OverlayTrigger, Popover, Badge, Pagination } from "react-bootstrap";
 import NotesDisplay from "./NotesDisplay";
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
