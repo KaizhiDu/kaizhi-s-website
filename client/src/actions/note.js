@@ -1,6 +1,18 @@
 import axios from 'axios';
-import { GET_NOTE, GET_NOTES, LIKE_COMMENT, UPDATE_COMMENT } from "./type";
+import { GET_NOTE, GET_NOTES, LIKE_COMMENT, LOAD_NOTES, UPDATE_COMMENT } from "./type";
 import React from "react";
+
+export const loadNotes = () => async dispatch => {
+    try {
+        const res = await axios.get('/api/note/all');
+        dispatch({
+            type: LOAD_NOTES,
+            payload: res.data
+        });
+    } catch (err) {
+        console.log(err.message);
+    }
+};
 
 export const getNotes = () => async dispatch => {
     try {

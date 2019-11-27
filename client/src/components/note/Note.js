@@ -3,10 +3,11 @@
  */
 import React, { useEffect, Fragment } from 'react';
 import { connect } from "react-redux";
-import { getNote } from '../../actions/note';
-import { Col, OverlayTrigger, Popover, Row } from "react-bootstrap";
+import { getNote, loadNotes } from '../../actions/note';
+import { Badge, Col, OverlayTrigger, Popover, Row } from "react-bootstrap";
 import myw from "../../img/myw.jpeg";
 import NoteDisplay from "./NoteDisplay";
+import { Link } from "react-router-dom";
 
 const popover = (
     <Popover className="popover" id="popover-basic">
@@ -39,10 +40,18 @@ const popover = (
     </Popover>
 );
 
-const Note = ({ match, getNote, note: { note, noteLoading } }) => {
+const isFirstEight = (element, index) => {
+    return (index < 8);
+};
+
+const Note = ({ match, getNote, loadNotes, note: { note, noteLoading, notes } }) => {
 
     useEffect(() => {
         getNote(match.params.id);
+        setTimeout(function() {
+            loadNotes();
+        }, 100);
+
     }, []);
 
     return (
@@ -87,9 +96,47 @@ const Note = ({ match, getNote, note: { note, noteLoading } }) => {
                     </OverlayTrigger>
 
                     <hr/>
-                    <Row>最近发布</Row>
+                    <Row>
+                        <h5>Latest release</h5>
+
+                    </Row>
+                    <Row>
+                        <ul>
+                            {notes.filter(isFirstEight).map(note => (
+                                    <li>
+                                        <a key={note._id} style={{ textDecoration: 'none' }} href={`/note/${note._id}`}>
+                                            {note.title}
+                                        </a>
+                                    </li>
+                                )
+                            )}
+                        </ul>
+                    </Row>
                     <hr/>
-                    <Row>标签分类</Row>
+                    <Row>
+                        <h5>Tag classification</h5>
+                    </Row>
+                    <Row style={{ "marginTop": '10px' }}>
+                        <Badge className="NoteLabel" variant="info">java</Badge>
+                        <Badge className="NoteLabel" variant="info">javascript</Badge>
+                        <Badge className="NoteLabel" variant="info">typescript</Badge>
+                    </Row>
+
+                    <Row style={{ "marginTop": '10px' }}>
+                        <Badge className="NoteLabel" variant="info">node</Badge>
+                        <Badge className="NoteLabel" variant="info">spring</Badge>
+                        <Badge className="NoteLabel" variant="info">express</Badge>
+                    </Row>
+
+                    <Row style={{ "marginTop": '10px' }}>
+                        <Badge className="NoteLabel" variant="info">angular</Badge>
+                        <Badge className="NoteLabel" variant="info">react</Badge>
+                        <Badge className="NoteLabel" variant="info">redux</Badge>
+                    </Row>
+
+                    <Row style={{ "marginTop": '10px' }}>
+                        <Badge className="NoteLabel" variant="info">mongoose</Badge>
+                    </Row>
                 </Col>
             </Row>
         </Fragment>
@@ -100,4 +147,4 @@ const mapStateToProps = (state) => ({
     note: state.note
 });
 
-export default connect(mapStateToProps, { getNote })(Note);
+export default connect(mapStateToProps, { getNote, loadNotes })(Note);

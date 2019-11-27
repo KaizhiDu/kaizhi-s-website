@@ -1,4 +1,4 @@
-import { GET_NOTE, GET_NOTES, LIKE_COMMENT, UNLIKE_COMMENT, UPDATE_COMMENT } from "../actions/type";
+import { GET_NOTE, GET_NOTES, LIKE_COMMENT, LOAD_NOTES, UNLIKE_COMMENT, UPDATE_COMMENT } from "../actions/type";
 
 const initialState = {
     notes: [],
@@ -17,6 +17,13 @@ export default function(state = initialState, action) {
                 note: null,
                 loading: false,
                 noteLoading: true
+            };
+        case LOAD_NOTES:
+            return {
+                ...state,
+                notes: payload,
+                loading: false,
+                noteLoading: false
             };
         case LIKE_COMMENT:
         case UNLIKE_COMMENT:

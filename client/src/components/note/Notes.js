@@ -1,16 +1,21 @@
 /**
  * Created by Kaizhi Du on 2019/11/21.
  */
-import React, { Fragment } from 'react';
-import { Col, Row, OverlayTrigger, Popover } from "react-bootstrap";
+import React, { Fragment, useEffect } from 'react';
+import { Col, Row, OverlayTrigger, Popover, Badge } from "react-bootstrap";
 import NotesDisplay from "./NotesDisplay";
+import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import myw from '../../img/myw.jpeg';
 
 const popover = (
     <Popover className="popover" id="popover-basic">
         <Popover.Title as="h3">Selling oil story</Popover.Title>
         <Popover.Content>
-            During the Northern Song Dynasty, there was a skilled archer. One day he drew a big crowd while he was practicing on the drill ground. He shot so accurately that the on-lookers cheered with excitement. He became very proud of his skill. But among the crowd an old oil peddler only nodded his head indifferently. This hurt his Pride.<br/>
+            During the Northern Song Dynasty, there was a skilled archer. One day he drew a big crowd while he was
+            practicing on the drill ground. He shot so accurately that the on-lookers cheered with excitement. He became
+            very proud of his skill. But among the crowd an old oil peddler only nodded his head indifferently. This
+            hurt his Pride.<br/>
 
             "Can you do this?" he asked the old oil peddler.<br/>
 
@@ -22,16 +27,24 @@ const popover = (
 
             "What can you do, then?"<br/>
 
-            The old man said nothing. He put a gourd bottle on the ground and covered its mouth with a copper coin. He then scooped out a ladle of oil from his big jar, held it high and began to fill the bottle.<br/>
+            The old man said nothing. He put a gourd bottle on the ground and covered its mouth with a copper coin. He
+            then scooped out a ladle of oil from his big jar, held it high and began to fill the bottle.<br/>
 
-            Now, a thread of oil came down from the ladle into the bottle just through the hole of the coin. Everybody looking on watched with amazement. But the old man said, <strong>"This is nothing special, I can do this because I have practiced it a lot."</strong> And with these words, he left.<br/>
+            Now, a thread of oil came down from the ladle into the bottle just through the hole of the coin. Everybody
+            looking on watched with amazement. But the old man said, <strong>"This is nothing special, I can do this
+            because I have practiced it a lot."</strong> And with these words, he left.<br/>
 
             <strong>Later, people use this phrase to mean "Practice makes perfect".</strong>
         </Popover.Content>
     </Popover>
 );
 
-const Notes = () => {
+const isFirstEight = (element, index) => {
+    return (index < 8);
+};
+
+const Notes = ({ notes }) => {
+
     return (
         <Fragment>
             <br/>
@@ -64,9 +77,47 @@ const Notes = () => {
                     </OverlayTrigger>
 
                     <hr/>
-                    <Row>最近发布</Row>
+                    <Row>
+                        <h5>Latest release</h5>
+
+                    </Row>
+                    <Row>
+                        <ul>
+                            {notes.filter(isFirstEight).map(note => (
+                                    <li>
+                                        <Link style={{ textDecoration: 'none' }} to={`/note/${note._id}`}>
+                                            {note.title}
+                                        </Link>
+                                    </li>
+                                )
+                            )}
+                        </ul>
+                    </Row>
                     <hr/>
-                    <Row>标签分类</Row>
+                    <Row>
+                        <h5>Tag classification</h5>
+                    </Row>
+                    <Row style={{ "marginTop": '10px' }}>
+                        <Badge className="NoteLabel" variant="info">java</Badge>
+                        <Badge className="NoteLabel" variant="info">javascript</Badge>
+                        <Badge className="NoteLabel" variant="info">typescript</Badge>
+                    </Row>
+
+                    <Row style={{ "marginTop": '10px' }}>
+                        <Badge className="NoteLabel" variant="info">node</Badge>
+                        <Badge className="NoteLabel" variant="info">spring</Badge>
+                        <Badge className="NoteLabel" variant="info">express</Badge>
+                    </Row>
+
+                    <Row style={{ "marginTop": '10px' }}>
+                        <Badge className="NoteLabel" variant="info">angular</Badge>
+                        <Badge className="NoteLabel" variant="info">react</Badge>
+                        <Badge className="NoteLabel" variant="info">redux</Badge>
+                    </Row>
+
+                    <Row style={{ "marginTop": '10px' }}>
+                        <Badge className="NoteLabel" variant="info">mongoose</Badge>
+                    </Row>
                 </Col>
             </Row>
         </Fragment>
@@ -74,4 +125,8 @@ const Notes = () => {
     )
 };
 
-export default Notes;
+const mapStateToProps = (state) => ({
+    notes: state.note.notes
+});
+
+export default connect(mapStateToProps, {})(Notes);
