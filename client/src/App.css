@@ -67,9 +67,11 @@ ul li a {
     width: 750px;
 }
 
+/* project Page */
 
-
-
+.project a {
+    color: black;
+}
 
 
 

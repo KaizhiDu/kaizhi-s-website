@@ -6,7 +6,7 @@ import React from 'react';
 const Photo = () => {
     return (
         <div>
-            this is photo
+            <h1>coming soon ! ! !</h1>
         </div>
     )
 }

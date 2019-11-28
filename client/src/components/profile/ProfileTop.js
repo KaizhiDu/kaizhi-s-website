@@ -30,22 +30,16 @@ const ProfileTop = () => {
                 </Media>
             </div>
             <div className="text-center icons my-2">
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <i className="fas fa-globe fa-2x"></i>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/KaizhiD" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-twitter fa-2x"></i>
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/kaizhi.du.9" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-facebook fa-2x"></i>
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/kaizhi-du-1588a8181/" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-linkedin fa-2x"></i>
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-youtube fa-2x"></i>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/kaizhidu/" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-instagram fa-2x"></i>
                 </a>
             </div>
