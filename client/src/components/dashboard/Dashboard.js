@@ -4,10 +4,9 @@
 import React, { Fragment } from 'react';
 import { Row, Col } from "react-bootstrap";
 import DashboardProfile from "./DashboardProfile";
-import DashboardJavaNote from "./DashboardJavaNote";
-import DashboardJSNote from "./DashboardJSNote";
+import DashboardNote from "./DashboardNote";
 import DashboardProject from "./DashboardProject";
-import { Link } from "react-router-dom";
+import DashboardSkills from "./DashboardSkills";
 
 const dashboard = () => {
 
@@ -15,18 +14,30 @@ const dashboard = () => {
         <Fragment>
             <br/>
             <Row>
-                <Col><DashboardProfile/></Col>
-                <Col><DashboardJavaNote/></Col>
-                <Col><DashboardJSNote/></Col>
+                <Col md={5}><DashboardProfile/></Col>
+                <Col md={7}><DashboardNote/></Col>
             </Row>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <hr/>
-
+            <h1 style={{"marginBottom":"8px"}}>My Skills</h1>
             <Row>
-                <h2>My Project</h2>
+                <br/>
+                <DashboardSkills/>
+            </Row>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <hr/>
+            <Row>
+                <h1 style={{"marginBottom":"18px"}}>My Project</h1>
                 <small className='ProjectClick'>
-                    <Link to='/project' className='text-muted' style={{ textDecoration: 'none' }}>
-                        click here
-                    </Link>
+                    <a href='/project' className='text-muted' style={{ textDecoration: 'none' }}>
+                        more projects
+                    </a>
                 </small>
                 <DashboardProject/>
             </Row>

@@ -4,12 +4,14 @@
 import React from 'react';
 import { Card, Col, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 import me from "../../img/me.jpg";
-import { Link } from "react-router-dom";
 
 const DashboardProfile = () => {
     return (
-        <Card style={{ width: '20rem' }}>
-            <Card.Img variant="top" src={me} height='400px'/>
+        <Card style={{ width: '25rem' }}>
+            <div style={{"marginTop":"20px"}} className="text-center">
+                <img src={me} width="330px" height='400px'/>
+            </div>
+
             <Card.Body>
                 <Card.Title>KAIZHI DU</Card.Title>
                 <Card.Text>
@@ -20,21 +22,40 @@ const DashboardProfile = () => {
                 <ListGroupItem>
                     <Row>
                         <Col md={5}><b>Language</b></Col>
-                        <Col md={7}>Java Javascript</Col>
+                        <Col md={7}>Java Javascript SQL</Col>
                     </Row>
                 </ListGroupItem>
                 <ListGroupItem>
                     <Row>
-                        <Col md={5}><b>Framework</b></Col>
-                        <Col md={7}>Spring Node React</Col>
+                        <Col md={5}><b>Contact</b></Col>
+                        <Col md={7}>xiaobabao0807@gmail.com</Col>
+                    </Row>
+                </ListGroupItem>
+                <ListGroupItem>
+                    <Row>
+                        <Col md={5}><b>Social Media</b></Col>
+                        <Col md={7}>
+                            <a href="https://www.linkedin.com/in/kaizhi-du-1588a8181/" target="_blank">
+                                <img src="https://img.icons8.com/color/48/000000/linkedin.png"/>
+                            </a>
+                            <a href="https://www.facebook.com/kaizhi.du.9" target="_blank">
+                                <img src="https://img.icons8.com/color/48/000000/facebook-circled.png"/>
+                            </a>
+                            <a href="https://twitter.com/KaizhiD" target="_blank">
+                                <img src="https://img.icons8.com/color/48/000000/twitter.png"/>
+                            </a>
+                            <a href="https://www.instagram.com/kaizhidu/" target="_blank">
+                                <img src="https://img.icons8.com/color/48/000000/instagram-new.png"/>
+                            </a>
+                        </Col>
                     </Row>
                 </ListGroupItem>
             </ListGroup>
             <Card.Body>
                 <div className='text-right'>
-                    <Link to='/profile' style={{ textDecoration: 'none' }}>
+                    <a href='/profile' style={{ textDecoration: 'none' }}>
                         See me more
-                    </Link>
+                    </a>
                 </div>
             </Card.Body>
         </Card>

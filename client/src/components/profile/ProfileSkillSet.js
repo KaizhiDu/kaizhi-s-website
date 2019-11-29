@@ -34,6 +34,8 @@ const ProfileSkillSet = () => {
                                 <Badge className='skillSpace' pill variant='primary'>Express</Badge>
                                 <Badge className='skillSpace' pill variant='primary'>React</Badge>
                                 <Badge className='skillSpace' pill variant='primary'>Angular</Badge>
+                                <Badge className='skillSpace' pill variant='primary'>Mybatis</Badge>
+                                <Badge className='skillSpace' pill variant='primary'>Mongoose</Badge>
                             </h3>
                         </Col>
                     </Row>
