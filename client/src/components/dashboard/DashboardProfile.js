@@ -38,8 +38,8 @@ const DashboardProfile = () => {
                             <a href="https://www.linkedin.com/in/kaizhi-du-1588a8181/" target="_blank">
                                 <img src="https://img.icons8.com/color/48/000000/linkedin.png"/>
                             </a>
-                            <a href="https://www.facebook.com/kaizhi.du.9" target="_blank">
-                                <img src="https://img.icons8.com/color/48/000000/facebook-circled.png"/>
+                            <a href="https://github.com/KaizhiDu" target="_blank">
+                                <img src="https://img.icons8.com/nolan/48/000000/github.png"/>
                             </a>
                             <a href="https://twitter.com/KaizhiD" target="_blank">
                                 <img src="https://img.icons8.com/color/48/000000/twitter.png"/>

@@ -33,8 +33,8 @@ const ProfileTop = () => {
                 <a href="https://twitter.com/KaizhiD" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-twitter fa-2x"></i>
                 </a>
-                <a href="https://www.facebook.com/kaizhi.du.9" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-facebook fa-2x"></i>
+                <a href="https://github.com/KaizhiDu" target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-github fa-2x"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/kaizhi-du-1588a8181/" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-linkedin fa-2x"></i>
