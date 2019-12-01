@@ -1,11 +1,12 @@
 /**
  * Created by Kaizhi Du on 2019/11/13.
  */
-import React, {  Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { Field, reduxForm } from "redux-form";
 // inside import
 import FieldInput from "../../utils/FieldInput";
+import { Link } from "react-router-dom";
 
 const emailRg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -23,7 +24,9 @@ const Login = ({ onRegisterClick, handleSubmit }) => {
                     <Field type="password" name="password" placeholder="Password" component={FieldInput}/>
                 </Form.Group>
                 <Form.Group className='text-center' controlId="formBasicCheckbox">
-                    <i className="fab fa-google"> Login with Google</i>
+                    <a href="/auth/google" className="oauth">
+                        <i className="fab fa-google"> Login with Google</i>
+                    </a>
                 </Form.Group>
                 <Row>
                     <Col>

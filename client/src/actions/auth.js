@@ -20,14 +20,6 @@ export const register = ({ name, email, password }) => async dispatch => {
     }
 };
 
-export const checkUserExist = (email) => async dispatch => {
-    const res = await axios.get(`/api/user/checkUserExist/${email}`);
-    dispatch({
-        type: CHECK_USER_EXIST,
-        payload: res.data
-    });
-};
-
 export const getAllUser = () => async dispatch => {
     const res = await axios.get('/api/user/all');
     dispatch({
@@ -37,16 +29,25 @@ export const getAllUser = () => async dispatch => {
 };
 
 export const loadUser = () => async dispatch => {
-    if (localStorage.token) {
-        setAuthToken(localStorage.token);
-        try {
-            const res = await axios.get('/api/auth');
-            dispatch({
-                type: LOAD_USER,
-                payload: res.data
-            });
-        } catch (err) {
-            console.error(err.message);
+    const oauthUser = await axios.get('/auth/google_user');
+    const googleUser = JSON.parse(JSON.stringify(oauthUser.data)).googleUser;
+    if (googleUser){
+        dispatch({
+            type: LOAD_USER,
+            payload: googleUser
+        });
+    }else {
+        if (localStorage.token) {
+            setAuthToken(localStorage.token);
+            try {
+                const res = await axios.get('/api/auth');
+                dispatch({
+                    type: LOAD_USER,
+                    payload: res.data
+                });
+            } catch (err) {
+                console.error(err.message);
+            }
         }
     }
 };
@@ -73,7 +74,8 @@ export const login = ({ email, password }) => async dispatch => {
     }
 };
 
-export const logout = () => dispatch => {
+export const logout = () => async dispatch => {
+    await axios.get('/auth/logout');
     dispatch({
         type: LOG_OUT
     });

@@ -7,6 +7,7 @@ import Auth from "../auth/Auth";
 import store from "../../store";
 import { loadUser } from "../../actions/auth";
 import { logout } from "../../actions/auth";
+import me from "../../img/me.jpg";
 
 const Topbar = ({ isAuthenticated, isLoading, logout, user }) => {
 
@@ -40,7 +41,11 @@ const Topbar = ({ isAuthenticated, isLoading, logout, user }) => {
                     </Nav>
                     <Nav>
                         {isAuthenticated && (isLoading === false) && (
-                            <Nav.Link className='showName'>welcome {user.name} !</Nav.Link>)}
+
+                            <Nav.Link className='showName'>
+                                <img style={{"marginRight":"7px"}} src={user.avatar} width="20px" height='20px'/>
+                                {user.name}
+                            </Nav.Link>)}
                         {
                             isAuthenticated ?
                                 (
