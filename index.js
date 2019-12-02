@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cookiesSession = require('cookie-session');
 const key = require('./config/default');
 require('./routes/oauth/passport');
+const path = require('path');
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.use(bodyParser.json());
 app.use(
     cookiesSession({
         maxAge: 24 * 60 * 60 * 1000,
-        keys: [key.CookieSecret]
+        keys: [ key.CookieSecret ]
     })
 );
 app.use(passport.initialize());
@@ -28,13 +29,19 @@ require('./routes/oauth/oauth')(app);
 // connect database
 connectDB();
 
-app.get('/', (req, res) => res.send('API RUNNING...'));
-
 app.use('/api/user', require('./routes/api/user'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/note', require('./routes/api/note'));
 
 
+//Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+    // Set static folder
+    app.use(express.static('client/bulid'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'bulid', 'index.html'));
+    });
+}
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server start on port ${PORT}`));
