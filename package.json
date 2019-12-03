@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "babao": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbulid": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run bulid --prefix client"
+    "babao": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
