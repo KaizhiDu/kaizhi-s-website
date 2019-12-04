@@ -72,7 +72,7 @@ const CommentsList = ({ note, comments, auth: { user }, likeComment, unlikeComme
                             )
                         }
                         {comment.likes.length === 0 ? "" : comment.likes.length}
-                        <i className="far fa-comment-alt" style={{ "marginLeft": "10px" }}></i>
+                        {/*<i className="far fa-comment-alt" style={{ "marginLeft": "10px" }}></i>*/}
                     </div>
                     <div className="text-right">
                         <span className="small"><Moment format="YYYY/MM/DD HH:mm">{comment.date}</Moment></span>
