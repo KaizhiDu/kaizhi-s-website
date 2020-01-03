@@ -29,14 +29,14 @@ const Topbar = ({ isAuthenticated, isLoading, logout, user }) => {
                         <Link className="nav-link" to="/profile">
                             Profile
                         </Link>
-                        <Link className="nav-link" to="/note">
-                            Note
+                        <Link className="nav-link" to="/resume">
+                            Resume
                         </Link>
                         <Link className="nav-link" to="/project">
                             Project
                         </Link>
-                        <Link className="nav-link" to="/photo">
-                            Photo
+                        <Link className="nav-link" to="/note">
+                            Note
                         </Link>
                     </Nav>
                     <Nav>

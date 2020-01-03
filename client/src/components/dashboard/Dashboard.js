@@ -21,26 +21,26 @@ const dashboard = () => {
             <br/>
             <br/>
             <br/>
-            <hr/>
-            <h1 style={{"marginBottom":"8px"}}>My Skills</h1>
-            <Row>
-                <br/>
-                <DashboardSkills/>
-            </Row>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <hr/>
-            <Row>
-                <h1 style={{"marginBottom":"18px"}}>My Project</h1>
-                <small className='ProjectClick'>
-                    <a href='/project' className='text-muted' style={{ textDecoration: 'none' }}>
-                        more projects
-                    </a>
-                </small>
-                <DashboardProject/>
-            </Row>
+            {/*<hr/>*/}
+            {/*<h1 style={{"marginBottom":"8px"}}>My Skills</h1>*/}
+            {/*<Row>*/}
+            {/*    <br/>*/}
+            {/*    <DashboardSkills/>*/}
+            {/*</Row>*/}
+            {/*<br/>*/}
+            {/*<br/>*/}
+            {/*<br/>*/}
+            {/*<br/>*/}
+            {/*<hr/>*/}
+            {/*<Row>*/}
+            {/*    <h1 style={{"marginBottom":"18px"}}>My Project</h1>*/}
+            {/*    <small className='ProjectClick'>*/}
+            {/*        <a href='/project' className='text-muted' style={{ textDecoration: 'none' }}>*/}
+            {/*            more projects*/}
+            {/*        </a>*/}
+            {/*    </small>*/}
+            {/*    <DashboardProject/>*/}
+            {/*</Row>*/}
             <br/>
         </Fragment>
     )

@@ -12,7 +12,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Notes from "./components/note/Notes";
 import Profile from "./components/profile/Profile";
 import Project from "./components/project/Project";
-import Photo from "./components/photo/Photo";
+import Resume from "./components/resume/resume";
 import NoteById from "./components/note/Note";
 import setAuthToken from "./utils/setAuthToken";
 import { loadUser } from "./actions/auth";
@@ -39,7 +39,7 @@ function App() {
                             <Route exact path='/note' component={Notes}/>
                             <Route exact path='/note/:id' component={NoteById}/>
                             <Route exact path='/project' component={Project}/>
-                            <Route exact path='/photo' component={Photo}/>
+                            <Route exact path='/resume' component={Resume}/>
                         </Switch>
                     </Container>
                 </Fragment>

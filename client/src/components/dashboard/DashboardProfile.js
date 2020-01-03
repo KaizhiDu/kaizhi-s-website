@@ -4,6 +4,7 @@
 import React from 'react';
 import { Card, Col, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 import me from "../../img/me.jpg";
+import resume from '../../kaizhidu.pdf';
 
 const DashboardProfile = () => {
     return (
@@ -19,16 +20,11 @@ const DashboardProfile = () => {
                 </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
-                <ListGroupItem>
-                    <Row>
-                        <Col md={5}><b>Language</b></Col>
-                        <Col md={7}>Java Javascript SQL</Col>
-                    </Row>
-                </ListGroupItem>
+
                 <ListGroupItem>
                     <Row>
                         <Col md={5}><b>Contact</b></Col>
-                        <Col md={7}>xiaobabao0807@gmail.com</Col>
+                      <Col md={7}><span className='email'>kdu@callutheran.edu</span> <br/> <span className='phoneNumber'>(626)342-2297</span> </Col>
                     </Row>
                 </ListGroupItem>
                 <ListGroupItem>
@@ -47,6 +43,18 @@ const DashboardProfile = () => {
                             <a href="https://www.instagram.com/kaizhidu/" target="_blank">
                                 <img src="https://img.icons8.com/color/48/000000/instagram-new.png"/>
                             </a>
+                        </Col>
+                    </Row>
+                </ListGroupItem>
+                <ListGroupItem>
+                    <Row>
+                        <Col md={5}><b>Resume</b></Col>
+                        <Col md={7}>
+
+                          <a className='ResumeButton btn btn-outline-success' href={resume} download="Kaizhi Du - Resume">Click Download</a>
+                          {/*<button className='ResumeButton btn btn-outline-success'>*/}
+                          {/*   Click download*/}
+                          {/* </button>*/}
                         </Col>
                     </Row>
                 </ListGroupItem>
