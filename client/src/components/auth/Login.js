@@ -24,7 +24,7 @@ const Login = ({ onRegisterClick, handleSubmit }) => {
                     <Field type="password" name="password" placeholder="Password" component={FieldInput}/>
                 </Form.Group>
                 <Form.Group className='text-center' controlId="formBasicCheckbox">
-                    <a href="/auth/google" className="oauth">
+                    <a href="https://dukaizhi.herokuapp.com/auth/google" className="oauth">
                         <i className="fab fa-google"> Login with Google</i>
                     </a>
                 </Form.Group>
