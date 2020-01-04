@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.3885dc56.chunk.css",
-    "main.js": "/static/js/main.4acff688.chunk.js",
-    "main.js.map": "/static/js/main.4acff688.chunk.js.map",
+    "main.js": "/static/js/main.122d4851.chunk.js",
+    "main.js.map": "/static/js/main.122d4851.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b240f91f.js",
     "runtime-main.js.map": "/static/js/runtime-main.b240f91f.js.map",
     "static/css/2.b0bb7f2c.chunk.css": "/static/css/2.b0bb7f2c.chunk.css",
-    "static/js/2.6b02802c.chunk.js": "/static/js/2.6b02802c.chunk.js",
-    "static/js/2.6b02802c.chunk.js.map": "/static/js/2.6b02802c.chunk.js.map",
+    "static/js/2.972a9900.chunk.js": "/static/js/2.972a9900.chunk.js",
+    "static/js/2.972a9900.chunk.js.map": "/static/js/2.972a9900.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.6d9a634732ac1a605c57ccf11feca8a5.js": "/precache-manifest.6d9a634732ac1a605c57ccf11feca8a5.js",
+    "precache-manifest.d2d65190af4408bb63435b4fece93da6.js": "/precache-manifest.d2d65190af4408bb63435b4fece93da6.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.b0bb7f2c.chunk.css.map": "/static/css/2.b0bb7f2c.chunk.css.map",
     "static/css/main.3885dc56.chunk.css.map": "/static/css/main.3885dc56.chunk.css.map",
@@ -21,11 +21,12 @@
     "static/media/eshopping.png": "/static/media/eshopping.1665c4ce.png",
     "static/media/kaizhidu.pdf": "/static/media/kaizhidu.f74c164a.pdf",
     "static/media/me-old.jpg": "/static/media/me-old.6260e291.jpg",
+    "static/media/me.jpg": "/static/media/me.0460b8c6.jpg",
     "static/media/mongame.png": "/static/media/mongame.59ff389f.png",
     "static/media/myw.jpeg": "/static/media/myw.c786371d.jpeg",
     "static/media/personWeb.jpg": "/static/media/personWeb.cfb55140.jpg",
     "static/media/profile.jpg": "/static/media/profile.9446dbc8.jpg",
-    "static/media/profile_me-old.jpg": "/static/media/profile_me-old.b6a36839.jpg",
+    "static/media/profile_me.jpg": "/static/media/profile_me.f55d00d8.jpg",
     "static/media/superstar.jpg": "/static/media/superstar.aae5bcf1.jpg",
     "static/media/tap-series.png": "/static/media/tap-series.3c8056da.png",
     "static/media/zqsz.jpg": "/static/media/zqsz.bafbb5bf.jpg"
@@ -33,8 +34,8 @@
   "entrypoints": [
     "static/js/runtime-main.b240f91f.js",
     "static/css/2.b0bb7f2c.chunk.css",
-    "static/js/2.6b02802c.chunk.js",
+    "static/js/2.972a9900.chunk.js",
     "static/css/main.3885dc56.chunk.css",
-    "static/js/main.4acff688.chunk.js"
+    "static/js/main.122d4851.chunk.js"
   ]
 }

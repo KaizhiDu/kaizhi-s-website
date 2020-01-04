@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { Media } from "react-bootstrap";
-import profileMe from "../../img/profile_me-old.jpg";
+import profileMe from "../../img/profile_me.jpg";
 
 const ProfileTop = () => {
     return (
@@ -11,7 +11,7 @@ const ProfileTop = () => {
             <div className='bg-light'>
                 <Media>
                     <img
-                        width={250}
+                        width={220}
                         height={200}
                         className="mr-4"
                         src={profileMe}

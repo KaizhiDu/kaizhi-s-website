@@ -3,14 +3,14 @@
  */
 import React from 'react';
 import { Card, Col, ListGroup, ListGroupItem, Row } from "react-bootstrap";
-import me from "../../img/me-old.jpg";
+import me from "../../img/me.jpg";
 import resume from '../../kaizhidu.pdf';
 
 const DashboardProfile = () => {
     return (
-        <Card style={{ width: '25rem' }}>
+        <Card style={{ width: '22rem' }}>
             <div style={{"marginTop":"20px"}} className="text-center">
-                <img src={me} width="330px" height='400px'/>
+                <img src={me} width="270px" height='440px'/>
             </div>
 
             <Card.Body>
@@ -31,15 +31,15 @@ const DashboardProfile = () => {
                     <Row>
                         <Col md={5}><b>Social Media</b></Col>
                         <Col md={7}>
-                            <a href="https://www.linkedin.com/in/kaizhi-du-1588a8181/" target="_blank">
+                            <a style={{marginLeft: 23}} href="https://www.linkedin.com/in/kaizhi-du-1588a8181/" target="_blank">
                                 <img src="https://img.icons8.com/color/48/000000/linkedin.png"/>
                             </a>
                             <a href="https://github.com/KaizhiDu" target="_blank">
                                 <img src="https://img.icons8.com/nolan/48/000000/github.png"/>
                             </a>
-                            <a href="https://twitter.com/KaizhiD" target="_blank">
-                                <img src="https://img.icons8.com/color/48/000000/twitter.png"/>
-                            </a>
+                            {/*<a href="https://twitter.com/KaizhiD" target="_blank">*/}
+                            {/*    <img src="https://img.icons8.com/color/48/000000/twitter.png"/>*/}
+                            {/*</a>*/}
                             <a href="https://www.instagram.com/kaizhidu/" target="_blank">
                                 <img src="https://img.icons8.com/color/48/000000/instagram-new.png"/>
                             </a>
