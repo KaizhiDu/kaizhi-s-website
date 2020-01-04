@@ -7,7 +7,7 @@ import Auth from "../auth/Auth";
 import store from "../../store";
 import { loadUser } from "../../actions/auth";
 import { logout } from "../../actions/auth";
-import me from "../../img/me.jpg";
+import me from "../../img/me-old.jpg";
 
 const Topbar = ({ isAuthenticated, isLoading, logout, user }) => {
 

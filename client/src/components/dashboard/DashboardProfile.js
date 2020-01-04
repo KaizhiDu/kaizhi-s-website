@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { Card, Col, ListGroup, ListGroupItem, Row } from "react-bootstrap";
-import me from "../../img/me.jpg";
+import me from "../../img/me-old.jpg";
 import resume from '../../kaizhidu.pdf';
 
 const DashboardProfile = () => {

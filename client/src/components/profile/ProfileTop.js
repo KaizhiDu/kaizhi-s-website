@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { Media } from "react-bootstrap";
-import profileMe from "../../img/profile_me.jpg";
+import profileMe from "../../img/profile_me-old.jpg";
 
 const ProfileTop = () => {
     return (
