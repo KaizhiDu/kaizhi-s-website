@@ -21,10 +21,7 @@ const ProfileTop = () => {
                         <h1>KAIZHI DU</h1>
                         <h5>Web Developer</h5>
                         <p>
-                            I am a Web Developer with 2 years Java development experience. So I have a certain
-                            understanding of web development. After coming to the United States, I learned about
-                            JavaScript and I hope to find work related to Java or JavaScript. I am not a very
-                            talented person, but I am very sure of my diligence and integrity.
+                            Masters Student in Information Technology, dedicated to learning in the Software Developmentfield, specializing in JavaScript, React, jQuery on front-end and Java, Node, Spring, MySQL,MongoDB on back-end.
                         </p>
                     </Media.Body>
                 </Media>

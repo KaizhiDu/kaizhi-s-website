@@ -30,7 +30,7 @@ const ProfileEducation = () => {
                                     Master's degree, Information Technology
                                 </p>
                                 <p>
-                                    I chose CLU because it's IT major is very good. During my time at school, I learned a lot about IT, distributed systems, data warehousing, big data and other courses. And self-learning JS web development related knowledge, and AWS cloud data services.
+                                    I chose CLU because it's IT major is very good. During my time at school, I learned a lot about IT, distributed systems, data warehousing, big data and other courses. And self-learning some JS web development related knowledge, and AWS cloud data services.
                                 </p>
                             </Media.Body>
                         </Media>

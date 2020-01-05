@@ -16,7 +16,7 @@ class FrameworkProficiency extends Component {
                     borderColor: "rgba(0,205,102,0.8)",
                     pointBackgroundColor: "rgba(0,205,102,0.8)",
                     backgroundColor: "rgba(0,238,118,0.3)",
-                    data: [ 90, 70, 70, 50, 90, 70 ]
+                    data: [ 85, 70, 85, 50, 85, 75 ]
                 }, {}
                 ]
             }

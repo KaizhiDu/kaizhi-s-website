@@ -16,7 +16,7 @@ class DatabaseProficiency extends Component {
                     borderColor: "rgba(154,205,50,0.8)",
                     pointBackgroundColor: "rgba(154,205,50,0.8)",
                     backgroundColor: "rgba(179,238,58,0.3)",
-                    data: [ 70, 50, 90, 85, 40 ]
+                    data: [ 70, 50, 85, 85, 40 ]
                 }, {}
                 ]
             }
