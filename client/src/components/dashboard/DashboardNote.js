@@ -20,7 +20,7 @@ const DashboardNote = ({ getNotes, note: { notes, loading } }) => {
     return loading ? <div>Loading...</div> : (
         <Fragment>
             <Row style={{"marginBottom":"8px"}}>
-                <h1>Latest notes</h1>
+                <h1 style={{'marginLeft': "30px"}}>Latest notes</h1>
                 <small className='ProjectClick'>
                     <Link to='/note' className='text-muted' style={{ textDecoration: 'none' }}>
                         more notes
