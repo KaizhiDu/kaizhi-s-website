@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a4de1688d9bda5fb874d0398bbf59db3",
+    "revision": "503032cc3c4a947651d64cc5ad7941ee",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.b0bb7f2c.chunk.css"
   },
   {
-    "revision": "90b4971bd66ed8bdd32a",
+    "revision": "00407ea00f2c219fa7cd",
     "url": "/static/css/main.3885dc56.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.972a9900.chunk.js"
   },
   {
-    "revision": "90b4971bd66ed8bdd32a",
-    "url": "/static/js/main.77bde0a6.chunk.js"
+    "revision": "00407ea00f2c219fa7cd",
+    "url": "/static/js/main.b8aa5b8e.chunk.js"
   },
   {
     "revision": "0a31ddf7382e0363a369",
@@ -48,8 +48,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/eshopping.1665c4ce.png"
   },
   {
-    "revision": "f4328554ab432557ac380b1c356d5dee",
-    "url": "/static/media/kaizhidu.f4328554.pdf"
+    "revision": "0a6909ce9dd59adadaa7a8daa5915b9c",
+    "url": "/static/media/kaizhidu.0a6909ce.pdf"
   },
   {
     "revision": "6260e291a2c1ec531b21eb09d4bde8ef",
